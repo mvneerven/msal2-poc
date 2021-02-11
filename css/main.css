@@ -1,0 +1,121 @@
+@charset "UTF-8";
+:root {
+    --color-background: white;
+    --color-base: 136;
+    --l: 35%;
+    --color-primary: hsl(var(--color-base), 78%, var(--l));
+    --color-primary-dark: hsl(var(--color-base), 78%, calc(var(--l) - 5%));
+    --color-primary-darker: hsl(var(--color-base), 78%, calc(var(--l) - 10%));
+    --color-primary-darkest: hsl(var(--color-base), 78%, calc(var(--l) - 25%));
+    --color-primary-light: hsl(var(--color-base), 78%, calc(var(--l) + 5%));
+    --color-primary-lighter: hsl(var(--color-base), 78%, calc(var(--l) + 10%));
+    --color-primary-lightest: hsl(var(--color-base), 78%, calc(var(--l) + 25%));
+    --color-secondary: rgb(180, 180, 180);
+    --color-shade: #bfcadb;
+    --scrollbar-border: 0.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    overflow: hidden;
+}
+
+html,
+body {
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    margin: 0;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.1em;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
+}
+
+html::-ms-scrollbar,
+body::-ms-scrollbar {
+    display: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Garamond, Baskerville, Baskerville Old Face, Hoefler Text, Times New Roman, serif;
+    font-weight: 800;
+}
+
+header h1 {
+    font-size: 4vh;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    -ms-grid-rows: minmax(10vh, 45px) 1fr 30px;
+    grid-template-rows: minmax(10vh, 45px) 1fr 30px;
+    grid-template-areas:
+        "hd"
+        "mn"
+        "ft";
+}
+
+.btn {
+    padding: 8px 12px;
+    display: inline-block;
+    margin-right: 1em;
+}
+
+header {
+    grid-row: 1;
+    grid-column: 1;
+    grid-area: hd;
+    background-color: white;
+    color: --color-primary-dark;
+    text-align: center;
+}
+
+main {
+    grid-area: mn;
+    display: grid;
+    padding: 1em;
+}
+
+aside.left {
+    z-index: 98;
+    overflow-y: auto;
+    height: 100%;
+    grid-column: 1 / span 2;
+    border-right: 1px dotted #ccc;
+    color: #232323;
+}
+
+aside.right {
+    grid-column: 11 / span 2;
+    border-left: 1px dotted #ccc;
+}
+
+footer {
+    grid-row: 3;
+    grid-column: 1;
+    grid-area: ft;
+    background-color: #262724;
+    color: #bbb;
+    text-align: center;
+    font-size: 0.6em;
+    padding: 0.4em;
+}
+
+footer a:link,
+footer a:visited,
+footer a:active {
+    color: #bbb;
+}
